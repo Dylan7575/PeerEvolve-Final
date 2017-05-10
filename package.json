@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "starter": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,9 +22,14 @@
     "@angular/router": "^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.23",
     "angular2-csv": "^0.2.1",
+    "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.4",
     "core-js": "^2.4.1",
+    "express": "^4.15.2",
+    "http": "0.0.0",
+    "http-server": "^0.10.0",
     "ng2-datepicker": "^1.8.3",
+    "path": "^0.12.7",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
