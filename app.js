@@ -1,15 +1,13 @@
-var express = require('express');
+// server.js
+const express = require('express');
+const app = express();
+// Run the app by serving the static files
+// in the dist directory
+app.all(express.static(__dirname + './dist'));
 
-// Setup server
-var app = express();
+// Start the app by listening on the default
+// Heroku port
 
-var server = require('http').createServer(app);
 
-require("routes.js")(app);
-
-// Start server
-server.listen(8080, '0.0.0.0', function () {
-  console.log('Express server listening on %d, in %s mode', 8080, app.get('env'));
-});
-
+app.listen(process.env.PORT || 8080);
 
