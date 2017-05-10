@@ -15,7 +15,7 @@ export class SurveyDemoComponent implements OnInit {
   currClass=localStorage.getItem("course");
   user=localStorage.getItem("user");
   list:string[]=[this.user,this.currClass];
-  group;
+  public group;
   data;
   users=[];
   ngOnInit(){

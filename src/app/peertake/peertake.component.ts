@@ -20,7 +20,7 @@ export class PeertakeComponent implements OnInit {
   private errorMessage=[];
   @Input() model : any;
   @Input() users : any;
-  @Input() group : any;
+  @Input() public group : any;
   form : FormGroup;
   payLoad:any = [];
   constructor(public http:Http,private router:Router) {}
