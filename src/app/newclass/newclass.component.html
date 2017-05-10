@@ -1,0 +1,12 @@
+
+
+
+<h1>Create a New Class</h1>
+
+<form [formGroup]="classEnter"  (ngSubmit)="doLogin($event)">
+  <label>Semester</label><input  formControlName= "Semester" type = "text" >
+  <label>CourseID</label><input formControlName= "CourseID" type = "text">
+
+
+  <button  [disabled]= "!classEnter.valid" type="submit">Submit Class</button>
+</form>

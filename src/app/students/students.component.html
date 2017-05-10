@@ -1,0 +1,17 @@
+<div class = "page-header"><h1>Students In {{classID}}<small><button class="btn btn-success" routerLink ="uploadcsv">Upload CSV</button></small></h1></div>
+<p>{{test}}</p>
+<ul  class="list-group">
+
+  <li class="list-group-item" *ngFor="let student of data">
+
+    <p>Student ID: {{student.StudentID}}</p>
+    <p>Group: {{student.GroupID}}</p>
+
+    <button  (click)="saveID(student.StudentID,student.GroupID)" class= "btn btn-primary" routerLink ="editstudents"  role ="button" style ="font-size:x-large">View</button>
+  </li>
+
+</ul>
+<button class="btn btn-primary btn-circle btn-lg" (click)="show()"><i class="glyphicon glyphicon-plus-sign"></i></button>
+<div *ngIf="showing">
+  <app-single-student [currClass]="classID" (test) = "change($event)"></app-single-student>
+</div>

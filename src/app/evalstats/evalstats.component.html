@@ -1,0 +1,48 @@
+<button routerLink ='/curvals'><span style ="font-size: xx-large" class = "glyphicon glyphicon-chevron-left"></span></button>
+<div>
+  <h1>Stats for {{evalid}}</h1>
+  <button style="margin-right: 1%" class ="btn btn-success"(click)="downloadFile()">Download CSV</button>
+  <button  class ="btn btn-success"(click)="downloadAverages()">Download Averages</button>
+</div>
+
+<ul class="list-group">
+
+  <li class="list-group-item" *ngFor="let user of data; let i = index">
+
+    <p>EvaluatorID: {{user[0]}}</p>
+    <p>Date Completed: {{user[1]}}</p>
+    <p>group: {{user[2]}}</p>
+    <p>User: {{user[3]}}</p>
+    <p>Score: {{user[4]}}</p>
+    <p>User: {{user[5]}}</p>
+    <p>Score: {{user[6]}}</p>
+
+    <span *ngIf="user.length>7 && user[7] !=null">
+    <p>User: {{user[7]}}</p>
+    <p>Score: {{user[8]}}</p>
+  </span>
+    <div *ngIf="user.length>9 && user[9] !=null">
+      <p>User: {{user[9]}}</p>
+      <p>Score: {{user[10]}}</p>
+    </div>
+    <div *ngIf="user.length>11&& user[11] !=null">
+      <p>User: {{user[11]}}</p>
+      <p>Score: {{user[12]}}</p>
+    </div>
+    <div *ngIf="user.length>13&& user[13] !=null">
+      <p>User: {{user[13]}}</p>
+      <p>Score: {{user[14]}}</p>
+    </div>
+    <div *ngIf="user.length>15&& user[15] !=null">
+      <p>User: {{user[15]}}</p>
+      <p>Score: {{user[16]}}</p>
+    </div>
+    <div *ngIf="user.length>17&& user[17] !=null">
+      <p>User: {{user[17]}}</p>
+      <p>Score: {{user[18]}}</p>
+    </div>
+
+
+
+  </li>
+</ul>

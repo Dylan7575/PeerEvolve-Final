@@ -1,0 +1,14 @@
+<div class = "page-header"><h1>Current Evaluations<small><button routerLink ='peereval' class="btn btn-success">Add a new eval</button></small></h1></div>
+<ul class="list-group">
+
+  <li class="list-group-item" *ngFor="let user of data">
+        <span>
+        <p>Open: {{user.openDate}}</p>
+        <p>Close: {{user.closedDate}}</p>
+        <p>Due:  {{user.dueDate}}</p>
+        <p>Missing: 7</p>
+        <p>Completed: 27</p>
+        </span>
+    <button  (click)="saveID(user.evalID)" class= "btn btn-primary" routerLink ='evalstats'  role ="button" style ="font-size:x-large">View</button>
+  </li>
+</ul>

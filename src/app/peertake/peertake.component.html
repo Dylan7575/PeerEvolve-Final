@@ -1,0 +1,40 @@
+<div class = "page-header"><h1>Evaluation for {{classs}}</h1></div>
+
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" >
+    <div *ngFor="let question of model.questions;let i = index" class="form-row">
+      <div class="alert alert-danger" role = "alert" *ngIf="errorMessage[0]">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>{{errorMessage[0]}}</div>
+
+
+
+      <div class="formHeading">{{question.text}}</div>
+
+      <div [ngSwitch]="question.controlType">
+        <div id ="users" *ngFor="let user of users">
+          <div *ngSwitchCase="'zerosum'"><label>{{user}}</label><input type={{question.type}} id = {{user+i}} name = "zerosum" [formControlName]="question.key "></div>
+          <div *ngSwitchCase="'textbox'"><label>{{user}}</label><input type="{{question.type}}" id="{{user+i}}"  [formControlName]="question.key"></div>
+          <div *ngSwitchCase="'dropdown'">
+            <label>{{user}}</label>
+            <select [formControlName]="question.key" id={{user+i}}>
+              <option *ngFor="let o of question.options" [value]="o.key">{{o.value}}</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+
+  </form>
+  <!--
+  <div class="form-row">
+    <div *ngIf="payLoad"><strong>The form contains the following values</strong></div>
+    <div>
+      {{payLoad}}
+    </div>
+  </div>-->
+</div>

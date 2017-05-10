@@ -1,0 +1,20 @@
+<div *ngIf="currentClass!=null" style = "top:50px;position:relative  ">
+  <nav  class="navbar navbar navbar-dark bg-inverse">
+    <ul class="nav navbar-nav">
+      <li class="nav-item" routerLinkActive="active">
+      <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+        <a class="nav-item nav-link" routerLink="home" routerLinkActive="active">Class Name : {{currentClass}}</a>
+      </li>
+
+      <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+        <a class="nav-item nav-link" routerLink="students" routerLinkActive="active">Students</a>
+      </li>
+      <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+        <a class="nav-item nav-link" routerLink="curvals" routerLinkActive="active">Evaluations</a>
+      </li>
+      <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+        <a class="nav-item nav-link" routerLink="groups" routerLinkActive="active">Groups</a>
+      </li>
+    </ul>
+  </nav>
+</div>

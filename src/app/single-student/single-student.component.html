@@ -1,0 +1,10 @@
+<form [formGroup]="studentEnter"  (ngSubmit)="doLogin($event)">
+  <label>Student ID:</label><input  formControlName= "StudentID" type = "text" >
+  <select id = "select" formControlName="Group" (change)="changeStatus($event)" required >
+    <option value="" id="disable"  selected>Please select a group</option>
+    <option *ngFor="let option of options" value={{option.GroupID}}>
+      {{option.GroupID}}</option>
+  </select>
+  <button [disabled]= "!studentEnter.valid" type="submit">Submit Student</button>
+</form>
+

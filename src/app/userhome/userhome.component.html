@@ -1,0 +1,12 @@
+<div class = "page-header"><h1>Current Evaluations</h1></div>
+<ul class="list-group">
+
+  <li class="list-group-item" *ngFor="let evals of data">
+    <p>Course: {{evals.CourseID}}</p>
+    <p>OpenDate: {{evals.OpenDate}}</p>
+    <p>Due Date: {{evals.DueDate}}</p>
+    <p>Close Date: {{evals.CloseDate}}</p>
+
+    <button  (click)="saveID(evals.EvalID,evals.CourseID)" class= "btn btn-primary" routerLink ='survey'  role ="button" style ="font-size:x-large">Take Peer Eval</button>
+  </li>
+</ul>

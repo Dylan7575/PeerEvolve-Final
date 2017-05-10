@@ -1,0 +1,7 @@
+<h1>Create a New Group</h1>
+<form [formGroup]="groupEnter"  (ngSubmit)="doLogin($event)">
+  <label>Group ID:</label><input  formControlName= "Group" type = "text" >
+
+
+  <button  [disabled]= "!groupEnter.valid" type="submit">Submit Group Name</button>
+</form>

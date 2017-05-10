@@ -1,0 +1,19 @@
+<br>
+<br>
+
+<h1>Edit {{student}}</h1>
+<button style="display:inline-block;margin-right: 1%" (click)="deleter()" >Delete User</button>
+<form [formGroup]="studedit"  (ngSubmit)="update($event)">
+  <label>Student ID:</label><input formControlName="Stud" type ="text" placeholder={{student}}>
+  <select id = "select" formControlName="Group" (change)="changeStatus($event)" required >
+    <option value="yees" id="disable" >Please select a group</option>
+    <option *ngFor="let option of data" value={{option.GroupID}}>
+      {{option.GroupID}}
+    </option>
+  </select>
+
+  <button [disabled]= "!studedit.valid" type="submit">Submit Changes</button>
+
+</form>
+
+
