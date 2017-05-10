@@ -9,10 +9,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private data;
-  private us;
-  private activeNum;
-  private showing;
+  data;
+  us;
+  activeNum;
+  showing;
   headers =new Headers({ 'Content-Type': 'application/json' });
   options = new RequestOptions({ headers: this.headers });
   constructor(private http:Http,private router: Router,private ref:ChangeDetectorRef) {
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   }
   getData() {
     // this.http.get("http://localhost/untitledfolder/getUserName.php").subscribe(res=>this.us=res.json());
-    this.http.post('http://localhost/PHP/untitledfolder/GetClasses.php',JSON.stringify(localStorage.getItem("user"))).
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/GetClasses.php',JSON.stringify(localStorage.getItem("user"))).
     subscribe(res=>this.data=res.json());
     //   console.log(this.data);
     // this.http.post('http://localhost/untitledfolder/classStats.php',JSON.stringify(localStorage.getItem("class"))).

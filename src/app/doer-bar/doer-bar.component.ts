@@ -6,7 +6,7 @@ import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
   styleUrls: ['./doer-bar.component.css']
 })
 export class DoerBarComponent implements OnInit {
-  private currentClass = this.currentClass;
+  currentClass = this.currentClass;
   constructor(private ref: ChangeDetectorRef) {
     setInterval(() => {
       this.ref.detectChanges();

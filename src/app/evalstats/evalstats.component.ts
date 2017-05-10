@@ -11,16 +11,14 @@ import {Angular2Csv} from 'angular2-csv';
   styleUrls: ['./evalstats.component.css']
 })
 export class EvalstatsComponent implements OnInit {
-  private data;
-  private sender=[];
-  private scores=[1,2,3,4,5,6,7,8,9,10];
-
-  private yes;
-  private average;
-  private evalid=localStorage.getItem("evalID");
+  data;
+  sender=[];
+  scores=[1,2,3,4,5,6,7,8,9,10];
+  currentClass =localStorage.getItem("class");
+  yes;
+  average;
+  evalid=localStorage.getItem("evalID");
   constructor(public http:Http) { }
-  private currentClass =localStorage.getItem("class");
-
   ngOnInit() {
     this.sender.push(this.evalid);
     this.sender.push(this.currentClass);
@@ -28,9 +26,9 @@ export class EvalstatsComponent implements OnInit {
     this.getData();
   }
   getData(){
-    this.http.post('http://localhost/PHP/untitledfolder/getScores.php',JSON.stringify(this.sender))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/getScores.php',JSON.stringify(this.sender))
       .subscribe(res=>this.data=res.json());
-    this.http.post('http://localhost/PHP/untitledfolder/EvalStats.php',JSON.stringify(this.sender))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/EvalStats.php',JSON.stringify(this.sender))
       .subscribe(res=>this.average=res.json());
 
 

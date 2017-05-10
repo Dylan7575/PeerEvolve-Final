@@ -24,7 +24,7 @@ export class UploadcsvComponent{
         console.log(myReader.result);
         let send = [myReader.result, localStorage.getItem("class")];
         // console.log(this.sender);
-        this.http.post('http://localhost/PHP/untitledfolder/UploadCSV.php', JSON.stringify(send))
+        this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/UploadCSV.php', JSON.stringify(send))
           .subscribe(data => this.data = data.json);
         alert("Successful import");
         this.router.navigateByUrl("students");

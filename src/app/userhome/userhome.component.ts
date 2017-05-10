@@ -7,8 +7,8 @@ import {Http} from "@angular/http";
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent implements OnInit {
-  private data;
-  private user = localStorage.getItem("user");
+  data;
+  user = localStorage.getItem("user");
 
   constructor(private http: Http) { }
 
@@ -16,7 +16,7 @@ export class UserhomeComponent implements OnInit {
     this.getData();
   }
   getData(){
-    this.http.post('http://localhost/php/untitledfolder/GetUserVals.php',JSON.stringify(this.user))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/GetUserVals.php',JSON.stringify(this.user))
       .subscribe(res=>this.data=res.json());
   }
   public  saveID(toStore,toClass){

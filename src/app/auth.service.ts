@@ -8,7 +8,7 @@ export class AuthService implements CanActivate {
   private error;
   canActivate() {
 
-    this.http.get('http://localhost/php/untitledfolder/getUserName.php',{withCredentials:true})
+    this.http.get('https://www.cefns.nau.edu/eecs/peerevolve/getUserName.php',{withCredentials:true})
         .subscribe(res=>this.data=res.json(),error => this.error = error,() => this.setData());
     return true;
   }

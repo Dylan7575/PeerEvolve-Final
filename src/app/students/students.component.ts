@@ -9,10 +9,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit,OnChanges {
-  private data;
-  private classID =localStorage.getItem("class");
-  private showing = false;
-  private test;
+  data;
+  classID =localStorage.getItem("class");
+  showing = false;
+  test;
   constructor(private router:Router,private ref: ChangeDetectorRef,public http:Http) {
 
     setInterval(() => {
@@ -27,7 +27,7 @@ export class StudentsComponent implements OnInit,OnChanges {
     this.getData();
   }
   getData() {
-    this.http.post('http://localhost/PHP/untitledfolder/GetStudents.php',JSON.stringify(this.classID))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/GetStudents.php',JSON.stringify(this.classID))
       .subscribe(res=>this.data=res.json());
   }
   show() {

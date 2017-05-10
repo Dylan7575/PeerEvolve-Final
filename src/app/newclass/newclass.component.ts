@@ -33,7 +33,7 @@ export class NewclassComponent implements OnInit {
     let list: string[] = [Semester,CourseID,localStorage.getItem("user")];
 
 
-    this.http.post('http://localhost/PHP/untitledfolder/InsertCourse.php',JSON.stringify(list))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/InsertCourse.php',JSON.stringify(list))
       .subscribe(res=>this.data=res.json());
     //console.log(JSON.stringify(list));
     this.test.emit(false);

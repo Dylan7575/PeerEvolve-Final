@@ -16,7 +16,7 @@ export class AdminGuard implements CanActivate {
   private error;
     constructor(private http:Http,private router: Router ) {}
     canActivate() {
-        this.http.get('http://localhost/PHP/untitledfolder/getUserName.php',{withCredentials:true})
+        this.http.get('https://www.cefns.nau.edu/eecs/peerevolve/getUserName.php',{withCredentials:true})
             .subscribe(res=>this.data=res.json(),error => this.error = error,() => this.setData());
             return true;
         }
@@ -25,7 +25,7 @@ export class AdminGuard implements CanActivate {
 
 
                 localStorage.clear();
-                window.location.href="http://localhost/PHP/untitledfolder/login.php";
+                window.location.href="https://www.cefns.nau.edu/eecs/peerevolve/login.php";
 
             }
             if (this.data[1]==="admin") {

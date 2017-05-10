@@ -2,7 +2,7 @@
 <br>
 
 <h1>Edit {{student}}</h1>
-<button style="display:inline-block;margin-right: 1%" (click)="deleter()" >Delete User</button>
+<button style="display:inline-block;margin-right: 1%" (click)="deleter($event)" >Delete User</button>
 <form [formGroup]="studedit"  (ngSubmit)="update($event)">
   <label>Student ID:</label><input formControlName="Stud" type ="text" placeholder={{student}}>
   <select id = "select" formControlName="Group" (change)="changeStatus($event)" required >

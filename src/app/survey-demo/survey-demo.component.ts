@@ -11,21 +11,21 @@ import {ZeroSum} from '../QuestionTextbox';
   styleUrls: ['./survey-demo.component.css']
 })
 export class SurveyDemoComponent implements OnInit {
-  private questionModel = new QuestionModel();
-  private currClass=localStorage.getItem("course");
-  private user=localStorage.getItem("user");
+  questionModel = new QuestionModel();
+  currClass=localStorage.getItem("course");
+  user=localStorage.getItem("user");
   list:string[]=[this.user,this.currClass];
-  private group;
+  group;
   data;
-  private users=[];
+  users=[];
   ngOnInit(){
     console.log(this.currClass);
     console.log(this.user);
   }
   constructor(private http:Http){
-    this.http.post('http://localhost/PHP/untitledfolder/getGroups.php',JSON.stringify(this.list))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/getGroups.php',JSON.stringify(this.list))
       .subscribe(res=>this.users=res.json());
-    this.http.post('http://localhost/php/untitledfolder/getGroup.php',JSON.stringify(this.list))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/getGroup.php',JSON.stringify(this.list))
       .subscribe(res=>this.group=res.json());
     console.log(JSON.stringify(this.users));
     let question;

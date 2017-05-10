@@ -13,14 +13,14 @@ import {ifError} from "assert";
   styleUrls: ['./single-student.component.css']
 })
 export class SingleStudentComponent implements OnInit {
-  private data;
-  private classID= localStorage.getItem("class");
-  private options;
-  private fail = localStorage.getItem("class");
-  private bool = false;
+  data;
+  classID= localStorage.getItem("class");
+  options;
+  fail = localStorage.getItem("class");
+  bool = false;
   @Output() test = new EventEmitter();
   @Input() currClass:any;
-  public studentEnter = this.fb.group({
+  studentEnter = this.fb.group({
     StudentID : ["", Validators.compose([Validators.required])],
     Group : ["", Validators.compose([Validators.required])],
   });
@@ -29,7 +29,7 @@ export class SingleStudentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.post('http://localhost/PHP/untitledfolder/getCourseGroups.php',JSON.stringify(this.classID))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/getCourseGroups.php',JSON.stringify(this.classID))
       .subscribe(res=>this.options=res.json());
 
   }
@@ -45,7 +45,7 @@ export class SingleStudentComponent implements OnInit {
     let dd= localStorage.getItem("class");
     let list: string[] = [cd,od,dd];
 
-    this.http.post('http://localhost/PHP/untitledfolder/singleStudent.php',JSON.stringify(list))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/singleStudent.php',JSON.stringify(list))
       .subscribe(res=>this.data=res.json());
     this.studentEnter.reset();
     this.test.emit(false);

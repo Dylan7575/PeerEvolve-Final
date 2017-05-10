@@ -8,8 +8,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 })
 export class TopbarComponent implements OnInit {
   fullImagePath: String;
-  private user = JSON.parse(localStorage.getItem("user"));
-  private class= localStorage.getItem("class");
+  user = JSON.parse(localStorage.getItem("user"));
+  classs= localStorage.getItem("class");
 
   isCollapsed = true;
   constructor(private ref: ChangeDetectorRef) {

@@ -41,7 +41,7 @@ export class PeerevalComponent implements OnInit {
     let list: string[] = [od,dd,cd,localStorage.getItem("user"),localStorage.getItem("class")];
 
 
-    this.http.post('http://localhost/PHP/untitledfolder/IP.php',JSON.stringify(list))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/IP.php',JSON.stringify(list))
       .subscribe(res=>this.data=res.json());
     // console.log(JSON.stringify(list));
     // console.log(this.data);

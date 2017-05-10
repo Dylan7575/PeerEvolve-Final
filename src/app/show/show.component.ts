@@ -8,9 +8,9 @@ import {Http} from "@angular/http";
 })
 export class ShowComponent implements OnInit {
 
-  private data;
-  private classID = localStorage.getItem("class");
-  private showing = false;
+  data;
+  classID = localStorage.getItem("class");
+  showing = false;
 
   constructor(private ref: ChangeDetectorRef, public http: Http) {
 
@@ -25,7 +25,7 @@ export class ShowComponent implements OnInit {
   }
 
   getData() {
-    this.http.post('http://localhost/PHP/untitledfolder/getCourseGroups.php', JSON.stringify(this.classID))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/getCourseGroups.php', JSON.stringify(this.classID))
       .subscribe(res => this.data = res.json());
   }
 

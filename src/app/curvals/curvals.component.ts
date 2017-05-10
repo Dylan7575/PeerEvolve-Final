@@ -16,7 +16,7 @@ export class CurvalsComponent implements OnInit {
     this.getData();
   }
   getData(){
-    this.http.post('http://localhost/PHP/untitledfolder/GetVals.php',this.currentClass)
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/GetVals.php',this.currentClass)
       .subscribe(res=>this.data=res.json());
     console.log(JSON.stringify(this.data));
   }

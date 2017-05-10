@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./peertake.component.css']
 })
 export class PeertakeComponent implements OnInit {
-  private classs = localStorage.getItem("class");
+  classs = localStorage.getItem("class");
   private data ;
   private questions;
   private sender=[];
@@ -31,9 +31,9 @@ export class PeertakeComponent implements OnInit {
   }
 
   getData(){
-    this.http.post('http://localhost/PHP/untitledfolder/enterVal.php',JSON.stringify(localStorage.getItem("class")))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/enterVal.php',JSON.stringify(localStorage.getItem("class")))
       .subscribe(res=>this.data=res.json());
-    this.http.post('http://localhost/PHP/untitledfolder/questions.php',JSON.stringify(this.classs))
+    this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/questions.php',JSON.stringify(this.classs))
       .subscribe(res=>this.questions=res.json());
   }
   onSubmit() {
@@ -98,7 +98,7 @@ export class PeertakeComponent implements OnInit {
       //  }
 
       console.log(JSON.stringify(this.sender));
-      this.http.post('http://localhost/PHP/untitledfolder/PeerEnter.php',JSON.stringify(this.sender))
+      this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/PeerEnter.php',JSON.stringify(this.sender))
         .subscribe(res=>this.data=res.json());
       console.log(this.data);
       while(this.sender[0]!=null){
