@@ -24,6 +24,7 @@ import { PeerevalComponent } from './peereval/peereval.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { PeertakeComponent } from './peertake/peertake.component';
 import {AuthService} from './auth.service';
+import {HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -61,9 +62,9 @@ import {AuthService} from './auth.service';
         {path: 'curvals', component:CurvalsComponent,canActivate:[AdminGuard]},
         {path: 'curvals/evalstats', component:EvalstatsComponent,canActivate:[AdminGuard]},
         {path: 'curvals/peereval', component:PeerevalComponent, canActivate: [AdminGuard]},
-       {path: 'userhome',component:UserhomeComponent,canActivate:[AuthService]},
-       {path: 'userhome/survey',component:SurveyDemoComponent,canActivate:[AuthService]},
-        ])
+        {path: 'userhome',component:UserhomeComponent,canActivate:[AuthService]},
+        {path: 'userhome/survey',component:SurveyDemoComponent,canActivate:[AuthService]},
+        ],{useHash:true})
   ],
   providers: [AdminGuard,AuthService],
   bootstrap: [AppComponent]
