@@ -1,3 +1,15 @@
-<p>
-  peereval works!
-</p>
+<button routerLink ='/curvals'><span style ="font-size: xx-large" class = "glyphicon glyphicon-chevron-left"></span></button>
+
+<h1>Create a new Peer Evaluation</h1>
+<div class="alert alert-danger" *ngIf="!peerEnter.controls['OD'].valid && peerEnter.controls['OD'].touched">Open Date is in the wrong format yyyy-mm-dd</div>
+<div class="alert alert-danger" *ngIf="!peerEnter.controls['CD'].valid && peerEnter.controls['CD'].touched">Close Date is in the wrong format yyyy-mm-dd</div>
+<div class="alert alert-danger" *ngIf="!peerEnter.controls['DD'].valid && peerEnter.controls['DD'].touched">Due Date is in the wrong format yyyy-mm-dd</div>
+<form [formGroup]="peerEnter"  (ngSubmit)="doLogin($event)">
+  <label>Open Date</label><ng2-datepicker formControlName="OD" [(ngModel)]="date"></ng2-datepicker>
+  <label>Due Date</label><ng2-datepicker formControlName="DD" [(ngModel)]="date2"></ng2-datepicker>
+  <label>Close Date</label><ng2-datepicker formControlName="CD" [(ngModel)]="date1"></ng2-datepicker>
+  <select>
+    <option value = "default">Default</option>
+  </select>
+  <button [disabled]= "!peerEnter.valid" type="submit">Submit Peer Evaluation</button>
+</form>

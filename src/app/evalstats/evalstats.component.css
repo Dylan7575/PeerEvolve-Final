@@ -1,0 +1,10 @@
+li{
+  margin-top: .2%;
+  background-color: lightgray;
+  border: groove gray;
+}
+p {
+  font-size: x-large;
+  margin-right: 5%;
+  display: inline-block;
+}

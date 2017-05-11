@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Http} from "@angular/http";
 import {Validators, FormBuilder,FormControl,FormGroup} from "@angular/forms";
 import {isBoolean} from "util";
@@ -16,6 +16,8 @@ export class PeerevalComponent implements OnInit {
   date1:DateModel;
   date2:DateModel;
   options: DatePickerOptions;
+  @Output() test = new EventEmitter();
+  @Input() currClass:any;
   private model;
   private data;
   private temp=true;
@@ -48,6 +50,7 @@ export class PeerevalComponent implements OnInit {
     this.peerEnter.reset();
     alert("Evaluation successfully created");
     this.router.navigateByUrl("curvals");
+    this.test.emit(false);
 
 
   }

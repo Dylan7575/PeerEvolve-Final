@@ -10,7 +10,12 @@ export class CurvalsComponent implements OnInit {
   public data;
   private showing=false;
   currentClass= JSON.stringify(localStorage.getItem("class"));
-  constructor(private ref: ChangeDetectorRef,public http:Http) { }
+  constructor(private ref: ChangeDetectorRef,public http:Http) {
+    setInterval(() => {
+      this.ref.detectChanges();
+      this.getData();
+    }, 1000);
+  }
 
   ngOnInit() {
     this.getData();

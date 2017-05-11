@@ -25,6 +25,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { PeertakeComponent } from './peertake/peertake.component';
 import {AuthService} from './auth.service';
 import {HashLocationStrategy} from '@angular/common';
+import {DatePickerModule} from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {HashLocationStrategy} from '@angular/common';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+    DatePickerModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
         {path: '', redirectTo : 'home', pathMatch: 'full',canActivate:[AdminGuard]},
