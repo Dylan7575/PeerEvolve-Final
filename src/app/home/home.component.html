@@ -3,7 +3,7 @@
   <li class="list-group-item" *ngFor="let classs of data" >
     <span>
       <p>{{classs.CourseID}}</p>
-      <p>{{classs.Semester}}</p><button class="btn btn-primary"  (click)="setClass(class)" style="text-align: right">Select</button>
+      <p>{{classs.Semester}}</p><button class="btn btn-primary"  (click)="setClass(classs.CourseID)" style="text-align: right">Select</button>
     </span>
   </li>
 
