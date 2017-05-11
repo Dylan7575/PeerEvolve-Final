@@ -12,3 +12,8 @@
     <button  (click)="saveID(user.evalID)" class= "btn btn-primary" routerLink ='evalstats'  role ="button" style ="font-size:x-large">View</button>
   </li>
 </ul>
+<button class="btn btn-primary btn-circle btn-lg" (click)="show()"><i class="glyphicon glyphicon-plus-sign"></i></button>
+<div *ngIf="showing">
+  <app-peereval [currClass]="classID" (test) = "change($event)"></app-peereval>
+</div>
+

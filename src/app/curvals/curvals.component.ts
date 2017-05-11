@@ -8,7 +8,7 @@ import {Http} from "@angular/http";
 })
 export class CurvalsComponent implements OnInit {
   public data;
-  private showing=false;
+  showing=false;
   currentClass= JSON.stringify(localStorage.getItem("class"));
   constructor(private ref: ChangeDetectorRef,public http:Http) {
     setInterval(() => {
