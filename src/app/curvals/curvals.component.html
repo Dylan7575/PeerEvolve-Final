@@ -6,8 +6,8 @@
         <p>Open: {{user.openDate}}</p>
         <p>Due:  {{user.dueDate}}</p>
         <p>Close: {{user.closedDate}}</p>
-        <p>Missing: 7</p>
-        <p>Completed: 27</p>
+        <p>Missing: {{user.studentsNotResponded}}</p>
+        <p>Completed: {{user.studentsResponded}}</p>
         </span>
     <button  (click)="saveID(user.evalID)" class= "btn btn-primary" routerLink ='evalstats'  role ="button" style ="font-size:x-large">View</button>
   </li>
