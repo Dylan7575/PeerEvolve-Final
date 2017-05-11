@@ -3,6 +3,11 @@ p {
   margin-right: 5%;
   display: inline-block;
 }
+li{
+  margin-top: .2%;
+  background-color: lightgray;
+  border: groove gray;
+}
 
 body{margin:40px;}
 
@@ -32,8 +37,4 @@ body{margin:40px;}
   line-height: 1.33;
   border-radius: 35px;
 }
-li{
-  margin-top: .2%;
-  background-color: lightgray;
-  border: groove gray;
-}
+
