@@ -12180,7 +12180,7 @@ var PeerevalComponent = (function () {
         var cd = this.date1.formatted;
         var od = this.date.formatted;
         var dd = this.date2.formatted;
-        var list = [od, cd, dd, localStorage.getItem("user"), localStorage.getItem("class")];
+        var list = [od, dd, cd, localStorage.getItem("user"), localStorage.getItem("class")];
         this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/IP.php', JSON.stringify(list))
             .subscribe(function (res) { return _this.data = res.json(); });
         // console.log(JSON.stringify(list));
