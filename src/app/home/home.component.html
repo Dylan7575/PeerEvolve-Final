@@ -1,4 +1,4 @@
-<div class = "page-header"><h1>Current Classes {{us}}<small><button class="btn btn-success" routerLink ="newclass">Add Class</button></small></h1></div>
+<div class = "page-header"><h1>Current Classes {{us}}</h1></div>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let class of data" >
     <p>{{class}}</p> <button class="btn btn-primary"  (click)="setClass(class)" style="text-align: right">Select</button>
