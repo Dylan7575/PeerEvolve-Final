@@ -40,7 +40,7 @@ export class PeerevalComponent implements OnInit {
     let cd = this.date1.formatted;
     let od=this.date.formatted;
     let dd= this.date2.formatted;
-    let list: string[] = [od,dd,cd,localStorage.getItem("user"),localStorage.getItem("class")];
+    let list: string[] = [od,cd,dd,localStorage.getItem("user"),localStorage.getItem("class")];
 
 
     this.http.post('https://www.cefns.nau.edu/eecs/peerevolve/IP.php',JSON.stringify(list))
